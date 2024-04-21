@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
@@ -17,20 +18,25 @@ int main()
     cout << "-----------------------------" << std::endl << std::endl;
     cout << "Ingrese los siguientes datos:" << std::endl << std::endl;
     cout << "Nombre: ";
-    cin >> nombre;
+    getline(cin, nombre);
     cout << "Apellido: ";
-    cin >> apellido;
-    cout << "Edad: ";
-    cin >> edad;
+    getline(cin,apellido);
+      
     cout << "Direccion: ";
-    cin >> direccion;
-    cout << "Localidad: ";
-    cin >> localidad;
-    cout << "Provincia: ";
-    cin >> prov;
-    cout << "Pais: ";
-    cin >> pais;
-
+    getline(cin, direccion);
+    
+	cout << "Localidad: ";
+    getline(cin, localidad);
+    
+	cout << "Provincia: ";
+    getline(cin, prov);
+    
+	cout << "Pais: ";
+    getline(cin, pais);
+    
+	cout << "Edad: ";
+    cin >> edad;
+    
     system("CLS");
 
     cout << std::endl << "Listado de datos" << std::endl;
