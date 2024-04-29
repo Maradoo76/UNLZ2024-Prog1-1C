@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    int valor=0, contp=0, conti=0;
+    int valor=0, contp=0, conti=0, acup=0, acui=0;
     string pares, impares;
     stringstream ss;
     
@@ -25,6 +25,7 @@ int main()
     	if (valor!=0){
 	    	if (valor%2==0){
 	    		contp++;
+	    		acup=acup+valor;
 	    		if (pares==""){
 	    			pares=ss.str();
 	    			
@@ -33,6 +34,7 @@ int main()
 				}
 	    	} else {
 	    		conti++;
+	    		acui=acui+valor;
 	    		if (impares==""){
 	    			impares=ss.str();
 				} else {
@@ -46,13 +48,16 @@ int main()
     cout << "----------";
     cout << endl << endl;
     cout << "Valores pares ingresados: " << contp << endl;
+    cout << "Suma de pares: " << acup << endl;
     if (contp>0){
     	cout << pares  << endl;
 	}
+	cout << endl;
     cout << "Valores impares ingresados: " << conti << endl;
+    cout << "Suma de impares: " << acui << endl;
     if (conti>0){
     	cout << impares << endl;
-	}
+	}	
     return (0);
 }
 
