@@ -2,9 +2,7 @@
 
 using namespace std;
 
-int vector[9];
-
-void ordenar(int tipo){
+void ordenar(int vector[], int tipo){
 	int tmp;
 	
 	for (int i=0;i<10;i++){
@@ -26,14 +24,14 @@ void ordenar(int tipo){
 	}
 }
 
-void ingresar(){
+void ingresar(int vector[]){
 	for(int i=0;i<10;i++){
 		cout << "Ingrese valor n." << i+1 << " ";
 		cin >> vector[i];
 	}
 }
 
-void listar(){
+void listar(int vector[]){
 	system("CLS");
 	for(int i=0;i<10;i++){
 		cout << "Valor n." << i+1 << " " << vector[i] << endl;
@@ -42,14 +40,16 @@ void listar(){
 
 int main(){
 	int orden=1;
-	ingresar();
+	int vector[9];
+	
+	ingresar(vector);
 	system("CLS");
 	while (orden!=3){
 		cout << "Como lo desea ordenar (1-Ascendente 2-Descendiente 3-termina) ";
 		cin >> orden;
 		if(orden!=3){
-			ordenar(orden); //1-ascendente 2-descendiente
-			listar();
+			ordenar(vector, orden); //1-ascendente 2-descendiente 3-salir
+			listar(vector);
 		}
 	}
 }
